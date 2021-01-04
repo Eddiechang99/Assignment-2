@@ -1,5 +1,11 @@
+
+
 .navButtons {
 	justify-content: flex-end;
+}
+
+.nav-link {
+	display: block;
 }
 
 .nav-item {
@@ -13,6 +19,24 @@
 
 .section1 {
 	background: black;
-	height: 700px;
-	margin-bottom: 10px;
+	height: 840px;
+	margin-bottom: 20px;
 }
+
+.convertButton {
+	color: grey;
+}
+
+.convertButton:hover {
+	color: white !important;
+}
+
+/* @media screen and (max-width:600px) {
+	.convertHeader {
+		text-align: center;
+	}
+
+	.convertTag {
+		text-align: center;
+	}
+} */
