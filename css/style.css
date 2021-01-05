@@ -131,4 +131,12 @@ button {
 		margin-bottom: 20px;
 	}
 
+	.result {
+		margin: 20px 0 0 0;
+	}
+
+	.updatedTime {
+		margin: 0 0 20px 0;
+		text-align: center;
+	}
 }
