@@ -18,7 +18,7 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark" id="navbar">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark navbar-custom">
   <a class="navbar-brand" href="#"><img src="img/logo/logo-white.png" alt="website logo" width="70"></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -31,7 +31,7 @@
         <a class="nav-link" href="https://www.pwc.com/us/en/industries/financial-services/fintech/bitcoin-blockchain-cryptocurrency.html#:~:text=Bitcoin%20is%20the%20name%20of,verify%20the%20transfer%20of%20funds." target="blank">ABOUT CRYPTOCURRENCY</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#bitcoin">CRYPTOCURRENCY</a>
+        <a class="nav-link" href="#crypto">CRYPTOCURRENCY</a>
       </li>    
     </ul>
   </div>
@@ -43,45 +43,62 @@
 </nav>
 
 <div class="container-fluid section1" id="home" align="center">
-  <div class="container">
+  <div class="container" style="color: white;">
     <div class="row" style="padding-top: 100px;">
       <div class="col-lg-7" style="align-self: center;">
-        <!-- <h1 style="color: white; text-align: left;">CONVERT YOUR CASH WITH <br><span style="color: red">EDDIE'S CURRENCY CONVERTER</span></h1> -->
-
-        <div class="row" style="color: white;">
-          <center><h1 class="convertHeader">Currency Converter</h1></center><br>
-            <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center; padding: 0;">
-                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-                  <div class="form-group">
-                    <label class="sr-only" for="Amount">Amount</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">$ &nbsp&nbsp</div>
-                      <input type="number" class="form-control" id="amounta" placeholder="Amount" oninput="getRate(document.getElementById('currencya').value, document.getElementById('currencyb').value);">
-                      <select id="currencya" class="form-control" onclick="getRate(document.getElementById('currencya').value, document.getElementById('currencyb').value);"></select>
-                    </div>
-                  </div>
-                </div>
-      
-                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-                    <center>
-                      <button type="button" id="gobutton" class="btn btn-default convertButton" onclick="getRate(document.getElementById('currencya').value, document.getElementById('currencyb').value);">Go!</button>
-                      <button type="button" id="switch" class="btn btn-default convertButton" onclick="switchcurrency(); getRate(document.getElementById('currencya').value, document.getElementById('currencyb').value);">Switch</button>
-                    </center><br>
-                </div>
-      
-                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-                    <div class="form-group">
-                        <label class="sr-only" for="Amount"> Result </label>
-                        <div class="input-group">
-                            <div class="input-group-addon">$ &nbsp&nbsp</div>
-                            <input type="number" class="form-control" id="amountb" placeholder="Result" readonly>
-                            <select id="currencyb" class="form-control" onclick="getRate(document.getElementById('currencya').value, document.getElementById('currencyb').value);"></select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <center><h5 class="conv" style="font-weight: lighter;">Powered by Yahoo</h5></center>
-        </div>
+        <div class="converterHeader">
+            <label for="Amount">Amount</label>
+            <label for="From">From</label>
+            <label for="To">To</label>
+          </div>
+          <input type="number" name="Amount" value="">
+        
+          <select class="money1" name="money1">
+            <option value="AUD" class= "AUD">AUD</option><option value="BGN"class="BGN">BGN</option>
+            <option value="BRL" class="BRL">BRL</option><option value="CAD"class = "CAD">CAD</option>
+            <option value="CHF" class = "CHF">CHF</option><option value="CNY"class = "CNY">CNY</option>
+            <option value="CZK" class = "CZK">CZK</option><option value="DKK"class = "DKK">DKK</option>
+            <option value="EUR"class = "EUR">EURO</option><option value="GBP" class = "GBP">GBP</option>
+            <option value="HKD"class = "HKD">HKD</option><option value="HRK"class = "HRK">HRK</option>
+            <option value="HUF"class = "HUF">HUF</option><option value="IDR"class = "IDR">IDR</option>
+            <option value="ILS"class = "ILS">ILS</option><option value="INR"class = "INR">INR</option>
+            <option value="ISK"class = "ISK">ISK</option><option value="JPY"class = "JPY">JPY</option>
+            <option value="KRW"class = "KRW">KRW</option><option value="MXN"class = "MXN">MXN</option>
+            <option value="MYR"class = "MYR">MYR</option><option value="NOK"class = "NOK">NOK</option>
+            <option value="NZD"class = "NZD">NZD</option><option value="PHP"class = "PHP">PHP</option>
+            <option value="PLN"class = "PLN">PLN</option><option value="RON"class = "RON">RON</option>
+            <option value="RUB"class = "RUB">RUB</option><option value="SEK"class = "SEK">SEK</option>
+            <option value="SGD"class = "SGD">SGD</option><option value="THB"class = "THB">THB</option>
+            <option value="TRY"class = "TRY">TRY</option><option value="USD"class = "USD" >USD</option>
+            <option value="ZAR"class = "ZAR">ZAR</option>
+          </select>
+          
+          <select class="money2" name="money2">
+            <option value="AUD" class= "AUD">AUD</option><option value="BGN"class="BGN">BGN</option>
+            <option value="BRL" class="BRL">BRL</option><option value="CAD"class = "CAD">CAD</option>
+            <option value="CHF" class = "CHF">CHF</option><option value="CNY"class = "CNY">CNY</option>
+            <option value="CZK" class = "CZK">CZK</option><option value="DKK"class = "DKK">DKK</option>
+            <option value="EUR"class = "EUR">EURO</option><option value="GBP" class = "GBP">GBP</option>
+            <option value="HKD"class = "HKD">HKD</option><option value="HRK"class = "HRK">HRK</option>
+            <option value="HUF"class = "HUF">HUF</option><option value="IDR"class = "IDR">IDR</option>
+            <option value="ILS"class = "ILS">ILS</option><option value="INR"class = "INR">INR</option>
+            <option value="ISK"class = "ISK">ISK</option><option value="JPY"class = "JPY">JPY</option>
+            <option value="KRW"class = "KRW">KRW</option><option value="MXN"class = "MXN">MXN</option>
+            <option value="MYR"class = "MYR">MYR</option><option value="NOK"class = "NOK">NOK</option>
+            <option value="NZD"class = "NZD">NZD</option><option value="PHP"class = "PHP">PHP</option>
+            <option value="PLN"class = "PLN">PLN</option><option value="RON"class = "RON">RON</option>
+            <option value="RUB"class = "RUB">RUB</option><option value="SEK"class = "SEK">SEK</option>
+            <option value="SGD"class = "SGD">SGD</option><option value="THB"class = "THB">THB</option>
+            <option value="TRY"class = "TRY">TRY</option><option value="USD"class = "USD" >USD</option>
+            <option value="ZAR"class = "ZAR">ZAR</option>
+          </select>
+          
+          <button type="submit" name="button" onclick = "makeConvert()">Convert</button>
+          <div class="result">
+            <span class="amountInput"> </span><span class="response"><span>
+          </div>
+          <div class="updatedTime">
+          </div>
       </div>
       <div class="col-lg-5">
         <img src="img/landing/rocket-ship.png" alt="image of rocket ship in landing section" class="rocketShip">
@@ -90,7 +107,7 @@
   </div>  
 </div>
 
-<div class="topbar-chart iq-chart" >
+<div class="topbar-chart iq-chart carousel-custom">
   <div class="container-fluid">
       <div class="row">
           <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
@@ -115,684 +132,49 @@
   </div>
 </div>
 
+<div class="container-fluid" id="crypto" style="height: 900px; background: grey;"></div>
+
 <script type="text/javascript">
-  var currencies = 
-      
-      [{
-          value: 'Afghan afghani',
-          data: 'AFN'
-      },
-      {
-          value: 'Albanian lek',
-          data: 'ALL'
-      },
-      {
-          value: 'Algerian dinar',
-          data: 'DZD'
-      },
-      {
-          value: 'European euro',
-          data: 'EUR'
-      },
-      {
-          value: 'Angolan kwanza',
-          data: 'AOA'
-      },
-      {
-          value: 'East Caribbean dollar',
-          data: 'XCD'
-      },
-      {
-          value: 'Argentine peso',
-          data: 'ARS'
-      },
-      {
-          value: 'Armenian dram',
-          data: 'AMD'
-      },
-      {
-          value: 'Aruban florin',
-          data: 'AWG'
-      },
-      {
-          value: 'Australian dollar',
-          data: 'AUD'
-      },
-      {
-          value: 'Azerbaijani manat',
-          data: 'AZN'
-      },
-      {
-          value: 'Bahamian dollar',
-          data: 'BSD'
-      },
-      {
-          value: 'Bahraini dinar',
-          data: 'BHD'
-      },
-      {
-          value: 'Bangladeshi taka',
-          data: 'BDT'
-      },
-      {
-          value: 'Barbadian dollar',
-          data: 'BBD'
-      },
-      {
-          value: 'Belarusian ruble',
-          data: 'BYR'
-      },
-      {
-          value: 'Belize dollar',
-          data: 'BZD'
-      },
-      {
-          value: 'West African CFA franc',
-          data: 'XOF'
-      },
-      {
-          value: 'Bhutanese ngultrum',
-          data: 'BTN'
-      },
-      {
-          value: 'Bolivian boliviano',
-          data: 'BOB'
-      },
-      {
-          value: 'Bosnia-Herzegovina konvertibilna marka',
-          data: 'BAM'
-      },
-      {
-          value: 'Botswana pula',
-          data: 'BWP'
-      },
-      {
-          value: 'Brazilian real',
-          data: 'BRL'
-      },
-      {
-          value: 'Brunei dollar',
-          data: 'BND'
-      },
-      {
-          value: 'Bulgarian lev',
-          data: 'BGN'
-      },
-      {
-          value: 'Burundi franc',
-          data: 'BIF'
-      },
-      {
-          value: 'Cambodian riel',
-          data: 'KHR'
-      },
-      {
-          value: 'Central African CFA franc',
-          data: 'XAF'
-      },
-      {
-          value: 'Canadian dollar',
-          data: 'CAD'
-      },
-      {
-          value: 'Cape Verdean escudo',
-          data: 'CVE'
-      },
-      {
-          value: 'Cayman Islands dollar',
-          data: 'KYD'
-      },
-      {
-          value: 'Chilean peso',
-          data: 'CLP'
-      },
-      {
-          value: 'Chinese renminbi',
-          data: 'CNY'
-      },
-      {
-          value: 'Colombian peso',
-          data: 'COP'
-      },
-      {
-          value: 'Comorian franc',
-          data: 'KMF'
-      },
-      {
-          value: 'Congolese franc',
-          data: 'CDF'
-      },
-      {
-          value: 'Costa Rican colon',
-          data: 'CRC'
-      },
-      {
-          value: 'Croatian kuna',
-          data: 'HRK'
-      },
-      {
-          value: 'Cuban peso',
-          data: 'CUC'
-      },
-      {
-          value: 'Czech koruna',
-          data: 'CZK'
-      },
-      {
-          value: 'Danish krone',
-          data: 'DKK'
-      },
-      {
-          value: 'Djiboutian franc',
-          data: 'DJF'
-      },
-      {
-          value: 'Dominican peso',
-          data: 'DOP'
-      },
-      {
-          value: 'Egyptian pound',
-          data: 'EGP'
-      },
-      {
-          value: 'Central African CFA franc',
-          data: 'GQE'
-      },
-      {
-          value: 'Eritrean nakfa',
-          data: 'ERN'
-      },
-      {
-          value: 'Estonian kroon',
-          data: 'EEK'
-      },
-      {
-          value: 'Ethiopian birr',
-          data: 'ETB'
-      },
-      {
-          value: 'Falkland Islands pound',
-          data: 'FKP'
-      },
-      {
-          value: 'Fijian dollar',
-          data: 'FJD'
-      },
-      {
-          value: 'CFP franc',
-          data: 'XPF'
-      },
-      {
-          value: 'Gambian dalasi',
-          data: 'GMD'
-      },
-      {
-          value: 'Georgian lari',
-          data: 'GEL'
-      },
-      {
-          value: 'Ghanaian cedi',
-          data: 'GHS'
-      },
-      {
-          value: 'Gibraltar pound',
-          data: 'GIP'
-      },
-      {
-          value: 'Guatemalan quetzal',
-          data: 'GTQ'
-      },
-      {
-          value: 'Guinean franc',
-          data: 'GNF'
-      },
-      {
-          value: 'Guyanese dollar',
-          data: 'GYD'
-      },
-      {
-          value: 'Haitian gourde',
-          data: 'HTG'
-      },
-      {
-          value: 'Honduran lempira',
-          data: 'HNL'
-      },
-      {
-          value: 'Hong Kong dollar',
-          data: 'HKD'
-      },
-      {
-          value: 'Hungarian forint',
-          data: 'HUF'
-      },
-      {
-          value: 'Icelandic krona',
-          data: 'ISK'
-      },
-      {
-          value: 'Indian rupee',
-          data: 'INR'
-      },
-      {
-          value: 'Indonesian rupiah',
-          data: 'IDR'
-      },
-      {
-          value: 'Iranian rial',
-          data: 'IRR'
-      },
-      {
-          value: 'Iraqi dinar',
-          data: 'IQD'
-      },
-      {
-          value: 'Israeli new sheqel',
-          data: 'ILS'
-      },
-      {
-          value: 'Jamaican dollar',
-          data: 'JMD'
-      },
-      {
-          value: 'Japanese yen',
-          data: 'JPY'
-      },
-      {
-          value: 'Jordanian dinar',
-          data: 'JOD'
-      },
-      {
-          value: 'Kazakhstani tenge',
-          data: 'KZT'
-      },
-      {
-          value: 'Kenyan shilling',
-          data: 'KES'
-      },
-      {
-          value: 'North Korean won',
-          data: 'KPW'
-      },
-      {
-          value: 'South Korean won',
-          data: 'KRW'
-      },
-      {
-          value: 'Kuwaiti dinar',
-          data: 'KWD'
-      },
-      {
-          value: 'Kyrgyzstani som',
-          data: 'KGS'
-      },
-      {
-          value: 'Lao kip',
-          data: 'LAK'
-      },
-      {
-          value: 'Latvian lats',
-          data: 'LVL'
-      },
-      {
-          value: 'Lebanese lira',
-          data: 'LBP'
-      },
-      {
-          value: 'Lesotho loti',
-          data: 'LSL'
-      },
-      {
-          value: 'Liberian dollar',
-          data: 'LRD'
-      },
-      {
-          value: 'Libyan dinar',
-          data: 'LYD'
-      },
-      {
-          value: 'Lithuanian litas',
-          data: 'LTL'
-      },
-      {
-          value: 'Macanese pataca',
-          data: 'MOP'
-      },
-      {
-          value: 'Macedonian denar',
-          data: 'MKD'
-      },
-      {
-          value: 'Malagasy ariary',
-          data: 'MGA'
-      },
-      {
-          value: 'Malawian kwacha',
-          data: 'MWK'
-      },
-      {
-          value: 'Malaysian ringgit',
-          data: 'MYR'
-      },
-      {
-          value: 'Maldivian rufiyaa',
-          data: 'MVR'
-      },
-      {
-          value: 'Mauritanian ouguiya',
-          data: 'MRO'
-      },
-      {
-          value: 'Mauritian rupee',
-          data: 'MUR'
-      },
-      {
-          value: 'Mexican peso',
-          data: 'MXN'
-      },
-      {
-          value: 'Moldovan leu',
-          data: 'MDL'
-      },
-      {
-          value: 'Mongolian tugrik',
-          data: 'MNT'
-      },
-      {
-          value: 'Moroccan dirham',
-          data: 'MAD'
-      },
-      {
-          value: 'Mozambican metical',
-          data: 'MZM'
-      },
-      {
-          value: 'Myanma kyat',
-          data: 'MMK'
-      },
-      {
-          value: 'Namibian dollar',
-          data: 'NAD'
-      },
-      {
-          value: 'Nepalese rupee',
-          data: 'NPR'
-      },
-      {
-          value: 'Netherlands Antillean gulden',
-          data: 'ANG'
-      },
-      {
-          value: 'New Zealand dollar',
-          data: 'NZD'
-      },
-      {
-          value: 'Nicaraguan cordoba',
-          data: 'NIO'
-      },
-      {
-          value: 'Nigerian naira',
-          data: 'NGN'
-      },
-      {
-          value: 'Norwegian krone',
-          data: 'NOK'
-      },
-      {
-          value: 'Omani rial',
-          data: 'OMR'
-      },
-      {
-          value: 'Pakistani rupee',
-          data: 'PKR'
-      },
-      {
-          value: 'Panamanian balboa',
-          data: 'PAB'
-      },
-      {
-          value: 'Papua New Guinean kina',
-          data: 'PGK'
-      },
-      {
-          value: 'Paraguayan guarani',
-          data: 'PYG'
-      },
-      {
-          value: 'Peruvian nuevo sol',
-          data: 'PEN'
-      },
-      {
-          value: 'Philippine peso',
-          data: 'PHP'
-      },
-      {
-          value: 'Polish zloty',
-          data: 'PLN'
-      },
-      {
-          value: 'Qatari riyal',
-          data: 'QAR'
-      },
-      {
-          value: 'Romanian leu',
-          data: 'RON'
-      },
-      {
-          value: 'Russian ruble',
-          data: 'RUB'
-      },
-      {
-          value: 'Rwandan franc',
-          data: 'RWF'
-      },
-      {
-          value: 'Saint Helena pound',
-          data: 'SHP'
-      },
-      {
-          value: 'Samoan tala',
-          data: 'WST'
-      },
-      {
-          value: 'Sao Tome and Principe dobra',
-          data: 'STD'
-      },
-      {
-          value: 'Saudi riyal',
-          data: 'SAR'
-      },
-      {
-          value: 'Serbian dinar',
-          data: 'RSD'
-      },
-      {
-          value: 'Seychellois rupee',
-          data: 'SCR'
-      },
-      {
-          value: 'Sierra Leonean leone',
-          data: 'SLL'
-      },
-      {
-          value: 'Singapore dollar',
-          data: 'SGD'
-      },
-      {
-          value: 'Slovak koruna',
-          data: 'SKK'
-      },
-      {
-          value: 'Solomon Islands dollar',
-          data: 'SBD'
-      },
-      {
-          value: 'Somali shilling',
-          data: 'SOS'
-      },
-      {
-          value: 'South African rand',
-          data: 'ZAR'
-      },
-      {
-          value: 'Sudanese pound',
-          data: 'SDG'
-      },
-      {
-          value: 'Sri Lankan rupee',
-          data: 'LKR'
-      },
-      {
-          value: 'Sudanese pound',
-          data: 'SDG'
-      },
-      {
-          value: 'Surinamese dollar',
-          data: 'SRD'
-      },
-      {
-          value: 'Swazi lilangeni',
-          data: 'SZL'
-      },
-      {
-          value: 'Swedish krona',
-          data: 'SEK'
-      },
-      {
-          value: 'Swiss franc',
-          data: 'CHF'
-      },
-      {
-          value: 'Syrian pound',
-          data: 'SYP'
-      },
-      {
-          value: 'New Taiwan dollar',
-          data: 'TWD'
-      },
-      {
-          value: 'Tajikistani somoni',
-          data: 'TJS'
-      },
-      {
-          value: 'Tanzanian shilling',
-          data: 'TZS'
-      },
-      {
-          value: 'Thai baht',
-          data: 'THB'
-      },
-      {
-          value: 'Paanga',
-          data: 'TOP'
-      },
-      {
-          value: 'Trinidad and Tobago dollar',
-          data: 'TTD'
-      },
-      {
-          value: 'Tunisian dinar',
-          data: 'TND'
-      },
-      {
-          value: 'Turkish new lira',
-          data: 'TRY'
-      },
-      {
-          value: 'Turkmen manat',
-          data: 'TMM'
-      },
-      {
-          value: 'Ugandan shilling',
-          data: 'UGX'
-      },
-      {
-          value: 'Ukrainian hryvnia',
-          data: 'UAH'
-      },
-      {
-          value: 'United Arab Emirates dirham',
-          data: 'AED'
-      },
-      {
-          value: 'British pound',
-          data: 'GBP'
-      },
-      {
-          value: 'United States dollar',
-          data: 'USD'
-      },
-      {
-          value: 'Uruguayan peso',
-          data: 'UYU'
-      },
-      {
-          value: 'Uzbekistani som',
-          data: 'UZS'
-      },
-      {
-          value: 'Vanuatu vatu',
-          data: 'VUV'
-      },
-      {
-          value: 'Venezuelan bolivar',
-          data: 'VEB'
-      },
-      {
-          value: 'Vietnamese dong',
-          data: 'VND'
-      },
-      {
-          value: 'Yemeni rial',
-          data: 'YER'
-      },
-      {
-          value: 'Zambian kwacha',
-          data: 'ZMK'
-      },
-      {
-          value: 'Zimbabwean dollar',
-          data: 'ZWD'
-      },
-  ];
+    
+    let json
+    let Selector1
+    let Selector2
 
-  var selecta = document.getElementById('currencya'),
-      selectb = document.getElementById('currencyb'),
-      option,
-      il = currencies.length;
+    function makeConvert(){
+      const httpRequest = new XMLHttpRequest();
+      httpRequest.onload = function(){
+        if (httpRequest.status === 200){
+          json = JSON.parse(httpRequest.responseText);
+        }else {
+          alert('There is an error')}
+          let amount = document.querySelector("input").value
+          if(amount>0){
+        document.querySelector(".updatedTime").innerHTML ="Updated on:"+json.date;
+          let selector1 = document.querySelector(".money1").value
+          let selector2 = document.querySelector(".money2").value
+          for(v in json.rates){
+            if (selector1 === v){
+              Selector1 = json.rates[v]
+              break}
+            else{
+            Selector1 = 1;}
+          }
+          for(v in json.rates){
+            if(selector2 === v){
+              Selector2 = json.rates[v]
+              break}
+            else {
+              Selector2 = 1;
+            }
+          }
+          let selector = Selector2/Selector1;
+          let result = amount*selector
+          document.querySelector(".response").innerHTML = selector2 +" "+ result;
+        }}
+      httpRequest.open('GET','https://api.exchangeratesapi.io/latest')
+      httpRequest.send()
+    }
 
-  for (i = 0; i < il; i += 1) {
-      option = document.createElement('option');
-      option.setAttribute('value', currencies[i].data);
-      option.appendChild(document.createTextNode(currencies[i].value + "  (" + currencies[i].data + ")"));
-      selecta.appendChild(option);
-  }
-
-  for (i = 0; i < il; i += 1) {
-      option = document.createElement('option');
-      option.setAttribute('value', currencies[i].data);
-      option.appendChild(document.createTextNode(currencies[i].value + "  (" + currencies[i].data + ")"));
-      selectb.appendChild(option);
-  }
-
-  function switchcurrency() {
-      var temp = document.getElementById('currencya').value;
-      document.getElementById('currencya').value = document.getElementById('currencyb').value;
-      document.getElementById('currencyb').value = temp;
-  }
-
-  function getRate(from, to) {
-      var script = document.createElement('script');
-      script.setAttribute('src', "//query.yahooapis.com/v1/public/yql?q=select%20rate%2Cname%20from%20csv%20where%20url%3D'http%3A%2F%2Fdownload.finance.yahoo.com%2Fd%2Fquotes%3Fs%3D"+from+to+"%253DX%26f%3Dl1n'%20and%20columns%3D'rate%2Cname'&format=json&callback=parseExchangeRate");
-      document.body.appendChild(script);
-  }
-
-  function parseExchangeRate(data) {
-      var name = data.query.results.row.name;
-      var rate = parseFloat(data.query.results.row.rate, 10);
-      alert("Exchange rate " + name + " is " + rate);
-      document.getElementById('amountb').value = rate * document.getElementById('amounta').value;
-  }
-</script>
+  </script>
 </body>
 </html>
