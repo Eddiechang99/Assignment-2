@@ -102,3 +102,33 @@ button {
 	font-weight: lighter;
 }
 
+@media screen and (max-width:400px) {
+
+	label {
+		margin: 0;
+		padding: 0 20px;
+	}
+
+	button {
+		margin: 0;
+	}
+
+	label:first-of-type {
+		margin: 0;
+	}
+
+	select {
+		margin: 20px 0;
+		width: 100%;
+	}
+
+	select:first-of-type {
+		margin: 0;
+	}
+
+	input {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+}
