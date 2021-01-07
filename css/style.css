@@ -68,11 +68,14 @@ label:first-of-type {
 
 input {
 	height: 25px;
+	padding: 20px;
+	border: 1px solid black;
 }
 
 select {
 	width: 100px;
 	margin-left: 45px;
+	padding: 10px;
 }
 
 select:first-of-type {
@@ -83,7 +86,7 @@ button {
 	display: block;
 	width: 100px;
 	margin-top: 30px;
-	margin-left: 360px;
+	margin-left: 400px;
 }
 
 .result {
@@ -105,7 +108,7 @@ button {
 @media screen and (max-width:400px) {
 
 	label {
-		margin: 0;
+		margin: 0 0 20px 0;
 		padding: 0 20px;
 	}
 
@@ -138,5 +141,10 @@ button {
 	.updatedTime {
 		margin: 0 0 20px 0;
 		text-align: center;
+	}
+
+	.section1 {
+		height: 755px;
+		padding-top: 150px;
 	}
 }
