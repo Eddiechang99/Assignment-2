@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+
   <link rel="stylesheet" href="css/Normalize.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -12,6 +15,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="js/vue2-filters.min.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  
+  <script src="js/app.js"></script>
   <script src="js/converter.js"></script>
 
 </head>
@@ -31,7 +42,7 @@
         <a class="nav-link" href="#home">HOME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#crypto">CRYPTO NEWS</a>
+        <a class="nav-link" href="#crypto">CRYPTO COMPARE</a>
       </li> 
       <li class="nav-item">
         <a class="nav-link" href="https://www.pwc.com/us/en/industries/financial-services/fintech/bitcoin-blockchain-cryptocurrency.html#:~:text=Bitcoin%20is%20the%20name%20of,verify%20the%20transfer%20of%20funds." target="blank">ABOUT CRYPTOCURRENCY</a>
@@ -58,6 +69,7 @@
           <input type="number" name="Amount" value="" placeholder="Enter Amount" class="inputAmount">
         
           <select class="money1" name="money1">
+            <option value="SGD"class = "SGD">SGD</option>
             <option value="AUD" class= "AUD">AUD</option><option value="BGN"class="BGN">BGN</option>
             <option value="BRL" class="BRL">BRL</option><option value="CAD"class = "CAD">CAD</option>
             <option value="CHF" class = "CHF">CHF</option><option value="CNY"class = "CNY">CNY</option>
@@ -72,9 +84,8 @@
             <option value="NZD"class = "NZD">NZD</option><option value="PHP"class = "PHP">PHP</option>
             <option value="PLN"class = "PLN">PLN</option><option value="RON"class = "RON">RON</option>
             <option value="RUB"class = "RUB">RUB</option><option value="SEK"class = "SEK">SEK</option>
-            <option value="SGD"class = "SGD">SGD</option><option value="THB"class = "THB">THB</option>
+            <option value="THB"class = "THB">THB</option><option value="ZAR"class = "ZAR">ZAR</option>
             <option value="TRY"class = "TRY">TRY</option><option value="USD"class = "USD" >USD</option>
-            <option value="ZAR"class = "ZAR">ZAR</option>
           </select>
           
           <select class="money2" name="money2">
@@ -136,8 +147,55 @@
   </div>
 </div>
 
-<div class="container-fluid" id="crypto" style="height: 800px; background: grey;">
+<div class="container-fluid" id="crypto" style="height: 800px; background: lightgrey; padding-top: 50px;">
 
-</div>
+  <div class="container">
+    <h1>Crypto Compare</h1>
+
+    <div class="row">
+      <div class="jumbotron col-xs-offset-2 col-xs-8">
+        <p>
+          This website indexes the top 10 cryptocurrencies by market cap (how
+          much the sum of all coins is collectively worth), and gives you an easy
+          way to compare cryptocurrency performance and rank over the last week.
+        </p>
+      </div>
+    </div>
+
+    <div id="app">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <td>Rank</td>
+            <td>Name</td>
+            <td>Symbol</td>
+            <td>Price (USD)</td>
+            <td>1H</td>
+            <td>1D</td>
+            <td>1W</td>
+            <td>Market Cap (USD)</td>
+        </thead>
+        <tbody>
+          <tr v-cloak v-for="coin in coins">
+            <td>{{ coin.rank }}</td>
+            <td><img v-bind:src="getCoinImage(coin.symbol)"> {{ coin.name }}</td>
+            <td>{{ coin.symbol }}</td>
+            <td>{{ coin.quotes.USD.price  | currency }}</td>
+            <td v-bind:style="getColor(coin.quotes.USD.percent_change_1h)">
+              <span v-if="coin.quotes.USD.percent_change_1h > 0">+</span>{{ coin.quotes.USD.percent_change_1h }}%
+            </td>
+            <td v-bind:style="getColor(coin.quotes.USD.percent_change_24h)">
+              <span v-if="coin.quotes.USD.percent_change_24h > 0">+</span>{{ coin.quotes.USD.percent_change_24h }}%
+            </td>
+            <td v-bind:style="getColor(coin.quotes.USD.percent_change_7d)">
+              <span v-if="coin.quotes.USD.percent_change_7d > 0">+</span>{{ coin.quotes.USD.percent_change_7d }}%
+            </td>
+            <td>{{ coin.quotes.USD.market_cap | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
 </body>
 </html>
